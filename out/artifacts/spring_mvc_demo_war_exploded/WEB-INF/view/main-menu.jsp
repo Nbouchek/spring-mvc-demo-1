@@ -12,7 +12,10 @@
 </head>
 <body>
 
-<h2>Spting MVC demo - Hello World</h2>
+<h2>Spring MVC Demo - Home Page</h2>
 
+<hr>
+
+<a href="showForm">Hello world form</a>
 </body>
 </html>
