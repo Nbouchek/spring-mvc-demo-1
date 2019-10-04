@@ -27,6 +27,7 @@ public class CustomerController {
 
     @RequestMapping("/showForm")
     public String showForm(Model theModel) {
+        System.out.println("THE MODEL => " + theModel.asMap());
         theModel.addAttribute("customer", new Customer());
         return "customer-form";
     }
@@ -35,7 +36,9 @@ public class CustomerController {
     public String processForm(
             @Valid @ModelAttribute("customer") Customer theCustomer,
             BindingResult theBindingResult) {
-        if (theBindingResult.hasGlobalErrors()) {
+        System.out.println("Last name: |" + theCustomer + "|");
+        System.out.println("BindingResult = " + theBindingResult.getModel().toString());
+        if (theBindingResult.hasErrors()) {
             return "customer-form";
         } else {
             return "customer-confirmation";
